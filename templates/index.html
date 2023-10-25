@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WebSocket Test</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
-  </head>
-  <body>
-    <div id="messages"></div>
-    <script type="text/javascript">
-      var socket = io.connect("http://localhost:5001");
-      socket.on("new_message", function (data) {
-        document.getElementById("messages").innerHTML += "<p>" + data.data + "</p>";
-      });
-    </script>
-  </body>
+
+<head>
+  <title>WebSocket Test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+
+<body>
+  <div id="messages"></div>
+  <script type="text/javascript">
+    var socket = io.connect("http://localhost:5000");
+    socket.on("new_message", function (data) {
+      document.getElementById("messages").innerHTML += "<p>" + data.data + "</p>";
+    });
+  </script>
+</body>
+
 </html>
